@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rr2epub"
+dynamic = ["version"]
+description = "Download a Royal Road fiction (or a chapter range of it) as a clean EPUB, minus author's notes and watermark junk."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["lxml>=5"]
+
+[project.scripts]
+rr2epub = "rr2epub.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/kurtlieber/royalroad-epub"
+
+[tool.setuptools.dynamic]
+version = { attr = "rr2epub.__version__" }
